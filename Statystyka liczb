@@ -1,0 +1,40 @@
+#include <iostream>
+#include <fstream>
+#include <ctime>
+
+using namespace std;
+
+int tab[11];
+
+int main() 
+{
+  ofstream file;
+
+  ofstream liczby;
+
+  srand(time(NULL));
+
+  file.open("dane.txt");
+  liczby.open("liczby.txt");
+
+  int n;
+  cin>>n;  
+  
+
+
+  for(int i=0;i<n;i++)
+  {
+    int x = rand()%10+1;
+    file << x <<endl;
+    tab[x]++;
+  }
+
+  for(int i=1;i<=10;i++)
+  {
+    liczby<<i<<": "<<tab[i]<<endl;
+  }
+
+
+  file.close();
+
+}
